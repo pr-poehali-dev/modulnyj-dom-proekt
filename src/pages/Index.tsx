@@ -68,6 +68,7 @@ const Index = () => {
           <nav className="hidden md:flex gap-8">
             <a href="#projects" className="text-foreground hover:text-primary transition-colors">Проекты</a>
             <a href="#advantages" className="text-foreground hover:text-primary transition-colors">Преимущества</a>
+            <a href="#timeline" className="text-foreground hover:text-primary transition-colors">Этапы</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Контакты</a>
           </nav>
           <Button>Заказать звонок</Button>
@@ -183,6 +184,118 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" className="py-20 px-4 bg-gradient-to-b from-background to-muted">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Этапы строительства</h2>
+            <p className="text-xl text-muted-foreground">От идеи до новоселья — прозрачный процесс</p>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 transform md:-translate-x-1/2" />
+            
+            <div className="space-y-12">
+              {[
+                {
+                  step: "01",
+                  title: "Консультация и выбор проекта",
+                  duration: "1-3 дня",
+                  description: "Обсуждаем ваши пожелания, подбираем оптимальный проект, рассчитываем стоимость и сроки",
+                  icon: "Lightbulb"
+                },
+                {
+                  step: "02",
+                  title: "Проектирование и согласование",
+                  duration: "5-7 дней",
+                  description: "Разрабатываем индивидуальный проект, готовим документацию, согласовываем все детали",
+                  icon: "FileText"
+                },
+                {
+                  step: "03",
+                  title: "Производство модулей",
+                  duration: "4-6 недель",
+                  description: "Изготавливаем модули на заводе с контролем качества на каждом этапе производства",
+                  icon: "Factory"
+                },
+                {
+                  step: "04",
+                  title: "Подготовка участка",
+                  duration: "1-2 недели",
+                  description: "Готовим фундамент и коммуникации под установку модульного дома",
+                  icon: "HardHat"
+                },
+                {
+                  step: "05",
+                  title: "Монтаж и сборка",
+                  duration: "2-4 недели",
+                  description: "Доставляем модули на участок, проводим сборку и подключение всех систем",
+                  icon: "Wrench"
+                },
+                {
+                  step: "06",
+                  title: "Финальная отделка",
+                  duration: "1-2 недели",
+                  description: "Завершаем отделочные работы, проводим финальную проверку всех систем",
+                  icon: "Paintbrush"
+                },
+                {
+                  step: "07",
+                  title: "Сдача объекта",
+                  duration: "1 день",
+                  description: "Передаем ключи, документы и гарантийные обязательства. Добро пожаловать домой!",
+                  icon: "Key"
+                }
+              ].map((stage, index) => (
+                <div 
+                  key={index} 
+                  className={`relative flex items-center gap-8 animate-fade-in-up ${
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                    <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2">
+                      <CardHeader>
+                        <div className="flex items-center gap-3 mb-2">
+                          <Badge className="text-lg font-bold px-3 py-1">{stage.step}</Badge>
+                          <Badge variant="secondary" className="text-xs">
+                            <Icon name="Clock" size={14} className="mr-1" />
+                            {stage.duration}
+                          </Badge>
+                        </div>
+                        <CardTitle className="text-2xl">{stage.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-muted-foreground">{stage.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  <div className="relative z-10 flex-shrink-0">
+                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-background">
+                      <Icon name={stage.icon} className="text-primary-foreground" size={28} />
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 hidden md:block" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <Card className="bg-primary/5 border-primary/20">
+              <CardContent className="py-8">
+                <h3 className="text-2xl font-bold mb-2">Полный цикл: 8-12 недель</h3>
+                <p className="text-lg text-muted-foreground">
+                  От первой встречи до новоселья — вы всегда в курсе каждого этапа
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
