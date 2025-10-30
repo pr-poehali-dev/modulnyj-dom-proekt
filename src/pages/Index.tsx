@@ -59,140 +59,117 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b">
+        <div className="container mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Icon name="Home" className="text-primary" size={28} />
-            <span className="text-2xl font-bold">ModularHomes</span>
+            <span className="text-3xl font-bold tracking-tight">FL-HAUS</span>
           </div>
-          <nav className="hidden md:flex gap-8">
-            <a href="#projects" className="text-foreground hover:text-primary transition-colors">Проекты</a>
-            <a href="#advantages" className="text-foreground hover:text-primary transition-colors">Преимущества</a>
-            <a href="#timeline" className="text-foreground hover:text-primary transition-colors">Этапы</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Контакты</a>
+          <nav className="hidden md:flex gap-10 text-sm">
+            <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Проекты</a>
+            <a href="#about" className="text-foreground/80 hover:text-foreground transition-colors font-medium">О нас</a>
+            <a href="#timeline" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Этапы</a>
+            <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Контакты</a>
           </nav>
-          <Button>Заказать звонок</Button>
+          <Button className="rounded-none font-medium">Консультация</Button>
         </div>
       </header>
 
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-b from-background to-muted">
-        <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <Badge className="mb-6 text-sm px-4 py-2">Инновации в строительстве</Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Модульные дома<br />
-              <span className="text-primary">нового поколения</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Технологичное строительство с гарантией качества. Экологичные материалы, 
-              быстрый монтаж и индивидуальный подход к каждому проекту.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                <Icon name="Sparkles" className="mr-2" size={20} />
-                Выбрать проект
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8">
-                <Icon name="Calculator" className="mr-2" size={20} />
-                Рассчитать стоимость
-              </Button>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/c08b3fe9-b768-4c7e-80f4-5cbf3b3d9c12.jpg" 
+            alt="Модульный дом"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+        <div className="relative z-10 container mx-auto px-6 text-center text-white">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight animate-fade-in">
+            Модульные дома<br />под ключ
+          </h1>
+          <p className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-light animate-fade-in-up">
+            От 100 000 ₽/м² • Срок производства от 3 месяцев
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <Button size="lg" className="text-lg px-10 py-6 rounded-none bg-white text-black hover:bg-white/90">
+              Смотреть проекты
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-10 py-6 rounded-none border-white text-white hover:bg-white/10">
+              Рассчитать стоимость
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-32 px-6 bg-muted">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">Ваш дом.<br />Ваши правила.</h2>
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                Мы производим модульные дома для постоянного проживания по немецким стандартам качества. 
+                Более 100 планировок на выбор с возможностью индивидуальной доработки.
+              </p>
+              <div className="grid grid-cols-2 gap-8">
+                {advantages.map((advantage, index) => (
+                  <div key={index}>
+                    <div className="text-4xl font-bold mb-2">{index === 0 ? '2-4' : index === 1 ? '5' : index === 2 ? '100%' : '30%'}</div>
+                    <div className="text-sm font-medium">{advantage.title.replace('Быстрое строительство', 'недели').replace('Гарантия качества', 'лет гарантии').replace('Экологичность', 'экологично').replace('Экономия до 30%', 'экономия')}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative h-[600px] rounded-none overflow-hidden">
+              <img 
+                src="https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/9585444a-2990-4c27-868e-1e5f33c41b96.jpg" 
+                alt="Интерьер"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="advantages" className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Почему выбирают нас</h2>
-            <p className="text-xl text-muted-foreground">Технологии и качество в каждой детали</p>
+      <section id="projects" className="py-32 px-6 bg-background">
+        <div className="container mx-auto max-w-7xl">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">Проекты домов</h2>
+            <p className="text-xl text-muted-foreground">Более 100 готовых планировок</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage, index) => (
-              <Card 
-                key={index} 
-                className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-scale-in border-2"
+          <div className="grid md:grid-cols-3 gap-1">
+            {projects.map((project, index) => (
+              <div 
+                key={project.id} 
+                className="relative group cursor-pointer overflow-hidden aspect-square animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Icon name={advantage.icon} className="text-primary" size={32} />
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                  <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
+                  <div className="flex items-center gap-4 text-sm mb-3">
+                    <span>{project.area}</span>
+                    <span>•</span>
+                    <span>{project.bedrooms} спальни</span>
                   </div>
-                  <CardTitle className="text-xl">{advantage.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{advantage.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="py-20 px-4 bg-muted">
-        <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши проекты</h2>
-            <p className="text-xl text-muted-foreground">Готовые решения для комфортной жизни</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card 
-                key={project.id} 
-                className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up group"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-background/90 text-foreground">
-                      {project.price}
-                    </Badge>
-                  </div>
+                  <p className="text-2xl font-bold mb-4">{project.price}</p>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300\">\n                    <button className="border border-white px-6 py-2 text-sm font-medium hover:bg-white hover:text-black transition-colors\">\n                      Подробнее\n                    </button>\n                  </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{project.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    <div className="flex items-center gap-4 mt-2">
-                      <span className="flex items-center gap-1">
-                        <Icon name="Maximize" size={18} className="text-primary" />
-                        {project.area}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Icon name="Bed" size={18} className="text-primary" />
-                        {project.bedrooms} спальни
-                      </span>
-                    </div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.features.map((feature, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    Подробнее
-                    <Icon name="ArrowRight" className="ml-2" size={18} />
-                  </Button>
-                </CardContent>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="timeline" className="py-20 px-4 bg-gradient-to-b from-background to-muted">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Этапы строительства</h2>
-            <p className="text-xl text-muted-foreground">От идеи до новоселья — прозрачный процесс</p>
+      <section id="timeline" className="py-32 px-6 bg-muted">
+        <div className="container mx-auto max-w-7xl">
+          <div className="mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">Как мы работаем</h2>
+            <p className="text-xl text-muted-foreground">Прозрачный процесс от заявки до ключей</p>
           </div>
           
           <div className="relative">
@@ -300,89 +277,110 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="border-2 shadow-2xl animate-scale-in">
-            <CardHeader className="text-center pb-8">
-              <CardTitle className="text-4xl mb-4">Начните свой проект сегодня</CardTitle>
-              <CardDescription className="text-lg">
-                Оставьте заявку, и наш специалист свяжется с вами в течение часа
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Ваше имя</label>
-                    <input 
-                      type="text" 
-                      placeholder="Иван Петров"
-                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Телефон</label>
-                    <input 
-                      type="tel" 
-                      placeholder="+7 (999) 123-45-67"
-                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    />
-                  </div>
+      <section id="contact" className="py-32 px-6 bg-background">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">Получить консультацию</h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Оставьте заявку, и мы свяжемся с вами в течение часа. 
+                Ответим на все вопросы и поможем выбрать оптимальный проект.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon name="Phone" size={24} />
+                  <span className="text-lg">+7 (495) 123-45-67</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Mail" size={24} />
+                  <span className="text-lg">info@fl-haus.ru</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Clock" size={24} />
+                  <span className="text-lg">Пн-Пт: 9:00 - 18:00</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <form className="space-y-6 bg-muted p-10">
+                <div>
+                  <input 
+                    type="text" 
+                    placeholder="Ваше имя"
+                    className="w-full px-6 py-4 border-none bg-background rounded-none focus:ring-2 focus:ring-primary transition-all text-lg"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Интересующий проект</label>
-                  <select className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
-                    <option>Выберите модель</option>
-                    {projects.map(project => (
-                      <option key={project.id}>{project.title}</option>
-                    ))}
-                  </select>
+                  <input 
+                    type="tel" 
+                    placeholder="Телефон"
+                    className="w-full px-6 py-4 border-none bg-background rounded-none focus:ring-2 focus:ring-primary transition-all text-lg"
+                  />
                 </div>
-                <Button type="submit" size="lg" className="w-full text-lg">
-                  <Icon name="Send" className="mr-2" size={20} />
+                <div>
+                  <input 
+                    type="email" 
+                    placeholder="Email"
+                    className="w-full px-6 py-4 border-none bg-background rounded-none focus:ring-2 focus:ring-primary transition-all text-lg"
+                  />
+                </div>
+                <div>
+                  <textarea 
+                    placeholder="Ваш вопрос"
+                    rows={4}
+                    className="w-full px-6 py-4 border-none bg-background rounded-none focus:ring-2 focus:ring-primary transition-all text-lg resize-none"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full text-lg py-6 rounded-none">
                   Отправить заявку
                 </Button>
+                <p className="text-xs text-muted-foreground">
+                  Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                </p>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </section>
 
-      <footer className="bg-secondary text-secondary-foreground py-12 px-4">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+      <footer className="bg-black text-white py-16 px-6">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Icon name="Home" size={24} />
-                <span className="text-xl font-bold">ModularHomes</span>
-              </div>
-              <p className="text-secondary-foreground/80">
-                Инновационные решения для строительства вашего дома
+              <div className="text-3xl font-bold mb-4">FL-HAUS</div>
+              <p className="text-white/60 text-sm">
+                Модульные дома для постоянного проживания
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-lg">Контакты</h3>
-              <div className="space-y-2 text-secondary-foreground/80">
-                <p className="flex items-center gap-2">
-                  <Icon name="Phone" size={18} />
-                  +7 (495) 123-45-67
-                </p>
-                <p className="flex items-center gap-2">
-                  <Icon name="Mail" size={18} />
-                  info@modularhomes.ru
-                </p>
+              <h3 className="font-bold mb-4">Компания</h3>
+              <div className="space-y-2 text-white/80 text-sm">
+                <p>О нас</p>
+                <p>Проекты</p>
+                <p>Технологии</p>
+                <p>Контакты</p>
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-lg">Режим работы</h3>
-              <p className="text-secondary-foreground/80">
-                Пн-Пт: 9:00 - 18:00<br />
-                Сб-Вс: 10:00 - 16:00
-              </p>
+              <h3 className="font-bold mb-4">Контакты</h3>
+              <div className="space-y-2 text-white/80 text-sm">
+                <p>+7 (495) 123-45-67</p>
+                <p>info@fl-haus.ru</p>
+                <p>СПб и ЛО</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-bold mb-4">Документы</h3>
+              <div className="space-y-2 text-white/80 text-sm">
+                <p>Политика конфиденциальности</p>
+                <p>Договор оферты</p>
+                <p>Реквизиты</p>
+              </div>
             </div>
           </div>
-          <div className="border-t border-secondary-foreground/20 pt-8 text-center text-secondary-foreground/60">
-            <p>© 2024 ModularHomes. Все права защищены.</p>
+          <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-white/60 text-sm">
+            <p>© 2024 FL-HAUS. Все права защищены.</p>
+            <p>Сделано с ❤️ для вашего комфорта</p>
           </div>
         </div>
       </footer>
