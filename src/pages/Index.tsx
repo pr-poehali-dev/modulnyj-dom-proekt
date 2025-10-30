@@ -176,7 +176,7 @@ const Index = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-300" />
-                <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end text-white mx-9 my-[17px] bg-gray-200 rounded-[0.25rem]">
                   <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
                   <div className="flex items-center gap-4 text-sm mb-3">
                     <span>{project.area}</span>
