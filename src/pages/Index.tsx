@@ -7,15 +7,33 @@ const Index = () => {
   const projects = [
     {
       id: 1,
+      title: "Модель Garden",
+      area: "85 м²",
+      bedrooms: 2,
+      price: "от 3 800 000 ₽",
+      image: "https://cdn.poehali.dev/files/6f017245-bde3-4e52-9f9b-df02b229656d.jpg",
+      features: ["Панорамные окна", "Терраса", "Деревянная отделка"]
+    },
+    {
+      id: 2,
+      title: "Модель Eco Studio",
+      area: "65 м²",
+      bedrooms: 1,
+      price: "от 2 900 000 ₽",
+      image: "https://cdn.poehali.dev/files/0483524b-d9b3-4069-b841-e879b8cfbe48.jpg",
+      features: ["Компактность", "Деревянный фасад", "Быстрый монтаж"]
+    },
+    {
+      id: 3,
       title: "Модель Nordic",
       area: "120 м²",
       bedrooms: 3,
       price: "от 4 500 000 ₽",
       image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/32616bb8-2c0d-4024-b610-61582000c064.jpg",
-      features: ["Панорамные окна", "Терраса", "Умный дом"]
+      features: ["Панорамные окна", "Умный дом", "Терраса"]
     },
     {
-      id: 2,
+      id: 4,
       title: "Модель Contemporary",
       area: "150 м²",
       bedrooms: 4,
@@ -24,13 +42,22 @@ const Index = () => {
       features: ["Два этажа", "Экологичные материалы", "Гараж"]
     },
     {
-      id: 3,
+      id: 5,
+      title: "Модель Urban",
+      area: "95 м²",
+      bedrooms: 2,
+      price: "от 4 100 000 ₽",
+      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/0f56325b-b395-42b9-a7ba-6b67e9055a12.jpg",
+      features: ["Металлический фасад", "Терраса", "Энергоэффективность"]
+    },
+    {
+      id: 6,
       title: "Модель Compact",
       area: "80 м²",
       bedrooms: 2,
       price: "от 3 200 000 ₽",
       image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/1a982036-02df-48df-bbb6-b647d3903518.jpg",
-      features: ["Энергоэффективность", "Быстрый монтаж", "Компактность"]
+      features: ["Компактность", "Быстрый монтаж", "Простая планировка"]
     }
   ];
 
