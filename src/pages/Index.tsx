@@ -374,7 +374,7 @@ const Index = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <div className="text-3xl font-bold mb-4">FL-HAUS</div>
+              <div className="text-3xl font-bold mb-4 rounded-full mx-[29px]">CROW-HOME</div>
               <p className="text-white/60 text-sm">
                 Модульные дома для постоянного проживания
               </p>
