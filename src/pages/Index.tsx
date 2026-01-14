@@ -11,7 +11,7 @@ const Index = () => {
       area: "85 м²",
       bedrooms: 2,
       price: "от 3 800 000 ₽",
-      image: "https://cdn.poehali.dev/files/6f017245-bde3-4e52-9f9b-df02b229656d.jpg",
+      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/2428532a-4140-4102-9a23-38b422ee566f.jpg",
       features: ["Панорамные окна", "Терраса", "Деревянная отделка"]
     },
     {
@@ -20,8 +20,8 @@ const Index = () => {
       area: "65 м²",
       bedrooms: 1,
       price: "от 2 900 000 ₽",
-      image: "https://cdn.poehali.dev/files/0483524b-d9b3-4069-b841-e879b8cfbe48.jpg",
-      features: ["Компактность", "Деревянный фасад", "Быстрый монтаж"]
+      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/778e3992-97ef-4a65-b8e6-5476d8aadac5.jpg",
+      features: ["Компактность", "Экологичность", "Быстрый монтаж"]
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const Index = () => {
       area: "120 м²",
       bedrooms: 3,
       price: "от 4 500 000 ₽",
-      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/32616bb8-2c0d-4024-b610-61582000c064.jpg",
+      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/724db29a-9181-48f7-b56c-4922ae3449e0.jpg",
       features: ["Панорамные окна", "Умный дом", "Терраса"]
     },
     {
@@ -38,7 +38,7 @@ const Index = () => {
       area: "150 м²",
       bedrooms: 4,
       price: "от 5 800 000 ₽",
-      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/4cf2663b-a18b-45b0-9b5f-4954708ee4cf.jpg",
+      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/256b6211-37bb-4d14-ab15-a86214a84a82.jpg",
       features: ["Два этажа", "Экологичные материалы", "Гараж"]
     },
     {
@@ -47,7 +47,7 @@ const Index = () => {
       area: "95 м²",
       bedrooms: 2,
       price: "от 4 100 000 ₽",
-      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/0f56325b-b395-42b9-a7ba-6b67e9055a12.jpg",
+      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/0e22f54a-5c41-4da2-bd18-5bef33ddc27a.jpg",
       features: ["Металлический фасад", "Терраса", "Энергоэффективность"]
     },
     {
@@ -56,7 +56,7 @@ const Index = () => {
       area: "80 м²",
       bedrooms: 2,
       price: "от 3 200 000 ₽",
-      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/1a982036-02df-48df-bbb6-b647d3903518.jpg",
+      image: "https://cdn.poehali.dev/projects/799be027-c95a-44ca-8165-027025836f28/files/f9dfc6f2-d654-4b09-afac-636f5f64a81d.jpg",
       features: ["Компактность", "Быстрый монтаж", "Простая планировка"]
     }
   ];
