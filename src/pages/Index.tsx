@@ -89,7 +89,7 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b">
         <div className="container mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-3xl font-bold tracking-tight">FL-HAUS</span>
+            <span className="tracking-tight mx-[5px] px-5 text-7xl font-extrabold">CROW-HOME</span>
           </div>
           <nav className="hidden md:flex gap-10 text-sm">
             <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Проекты</a>
